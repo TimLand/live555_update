@@ -140,6 +140,7 @@ void PassiveServerMediaSubsession
 		      Port& serverRTPPort,
 		      Port& serverRTCPPort,
 		      void*& streamToken) {
+	printf("PassiveServerMediaSubsession::getStreamParameter\n");
   isMulticast = True;
   Groupsock& gs = fRTPSink.groupsockBeingUsed();
   if (destinationTTL == 255) destinationTTL = gs.ttl();

@@ -99,6 +99,7 @@ void OnDemandServerMediaSubsession
   if (destinationAddress == 0) destinationAddress = clientAddress;
   struct in_addr destinationAddr; destinationAddr.s_addr = destinationAddress;
   isMulticast = False;
+  printf("OnDemandServerMediaSubsession::getStreamParameter\n");
 
   if (fLastStreamToken != NULL && fReuseFirstSource) {
     // Special case: Rather than creating a new 'StreamState',
@@ -110,6 +111,7 @@ void OnDemandServerMediaSubsession
   } else {
     // Normal case: Create a new media source:
     unsigned streamBitrate;
+	printf("OnDemandServerMediaSubsession,createNewStreamSource\n");
     FramedSource* mediaSource
       = createNewStreamSource(clientSessionId, streamBitrate);
 

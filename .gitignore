@@ -25,3 +25,13 @@
 *.filters
 *.vcxproj*
 test.*
+
+# live555
+live555MediaServer
+live555ProxyServer
+live/mediaServer/live555MediaServer
+live/mediaServer/live555MediaServer
+live/proxyServer/live555ProxyServer
+live/proxyServer/live555ProxyServer
+live/mediaServer/live555MediaServer
+live/proxyServer/live555ProxyServer

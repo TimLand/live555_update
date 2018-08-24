@@ -104,6 +104,7 @@ FramedSource* H264VideoFileServerMediaSubsession::createNewStreamSource(unsigned
   estBitrate = 500; // kbps, estimate
 
   // Create the video source:
+  printf("H264VideoFileServerMediaSubsession,createNewStreamSource\n");
   ByteStreamFileSource* fileSource = ByteStreamFileSource::createNew(envir(), fFileName);
   if (fileSource == NULL) return NULL;
   fFileSize = fileSource->fileSize();
