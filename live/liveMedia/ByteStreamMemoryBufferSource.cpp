@@ -74,7 +74,6 @@ void ByteStreamMemoryBufferSource::doGetNextFrame() {
     handleClosure();
     return;
   }
-
   // Try to read as many bytes as will fit in the buffer provided (or "fPreferredFrameSize" if less)
   fFrameSize = fMaxSize;
   if (fLimitNumBytesToStream && fNumBytesToStream < (u_int64_t)fFrameSize) {

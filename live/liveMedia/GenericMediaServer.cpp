@@ -40,6 +40,7 @@ void GenericMediaServer::addServerMediaSession(ServerMediaSession* serverMediaSe
 ServerMediaSession* GenericMediaServer
 ::lookupServerMediaSession(char const* streamName, Boolean /*isFirstLookupInSession*/) {
   // Default implementation:
+	printf("ServerMediaSession::GenericMediaServer::lookupServerMediaSession,streamname:%s\n", streamName);
   return (ServerMediaSession*)(fServerMediaSessions->Lookup(streamName));
 }
 

@@ -364,6 +364,7 @@ Boolean RTSPServerWithREGISTERProxying
 		      char const* proxyURLSuffix, char*& responseStr) {
   // First, check whether we have already proxied a stream as "proxyURLSuffix":
   if (proxyURLSuffix != NULL) {
+	  printf("RTSPServerWithREGISTERProxying::weImplementREGISTER,proxyURLSuffix:%s\n", proxyURLSuffix);
     ServerMediaSession* sms = lookupServerMediaSession(proxyURLSuffix);
     if ((strcmp(cmd, "REGISTER") == 0 && sms != NULL) ||
 	(strcmp(cmd, "DEREGISTER") == 0 && sms == NULL)) {

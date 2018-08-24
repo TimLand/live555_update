@@ -21,7 +21,7 @@ LIBRARY_LINK_OPTS =
 LIB_SUFFIX =			a
 LIBS_FOR_CONSOLE_APPLICATION =
 LIBS_FOR_GUI_APPLICATION =
-EXE =
+EXE = _exe 
 ##### End of variables to change
 
 MULTICAST_STREAMER_APPS = testMP3Streamer$(EXE) testMPEG1or2VideoStreamer$(EXE) testMPEG1or2AudioVideoStreamer$(EXE) testMPEG2TransportStreamer$(EXE) testMPEG4VideoStreamer$(EXE) testH264VideoStreamer$(EXE) testH265VideoStreamer$(EXE) testDVVideoStreamer$(EXE) testWAVAudioStreamer$(EXE) testAMRAudioStreamer$(EXE) testMKVStreamer$(EXE) testOggStreamer$(EXE) vobStreamer$(EXE)
@@ -160,7 +160,7 @@ testGSMStreamer$(EXE):	$(GSM_STREAMER_OBJS) $(LOCAL_LIBS)
 	$(LINK)$@ $(CONSOLE_LINK_OPTS) $(GSM_STREAMER_OBJS) $(LIBS)
 
 clean:
-	-rm -rf *.$(OBJ) $(ALL) core *.core *~ include/*~
+	-rm -rf *.$(OBJ) $(ALL) core *.core *~ include/*~ *.exe *._exe
 
 install: $(ALL)
 	  install -d $(DESTDIR)$(PREFIX)/bin

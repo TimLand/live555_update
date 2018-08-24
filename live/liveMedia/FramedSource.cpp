@@ -74,7 +74,6 @@ void FramedSource::getNextFrame(unsigned char* to, unsigned maxSize,
   fOnCloseFunc = onCloseFunc;
   fOnCloseClientData = onCloseClientData;
   fIsCurrentlyAwaitingData = True;
-
   doGetNextFrame();
 }
 

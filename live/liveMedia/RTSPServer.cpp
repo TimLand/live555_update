@@ -331,6 +331,7 @@ void RTSPServer::RTSPClientConnection
     // for "application/sdp", because that's what we're sending back #####
     
     // Begin by looking up the "ServerMediaSession" object for the specified "urlTotalSuffix":
+	printf("RTSPServer::RTSPClientConnection::handleCmd_DESCRIBE,urlTotalSuffix:%s\n", urlTotalSuffix);
     session = fOurServer.lookupServerMediaSession(urlTotalSuffix);
     if (session == NULL) {
       handleCmd_notFound();
@@ -1234,6 +1235,7 @@ void RTSPServer::RTSPClientSession
   char const* streamName = urlPreSuffix; // in the normal case
   char const* trackId = urlSuffix; // in the normal case
   char* concatenatedStreamName = NULL; // in the normal case
+  printf("RTSPServer::RTSPClientSession::handleCmd_SETUP,urlPreSuffix:%s,urlSuffix:%s\n", urlPreSuffix, urlSuffix);
   
   do {
     // First, make sure the specified stream name exists:
@@ -1281,6 +1283,7 @@ void RTSPServer::RTSPClientSession
       
       ServerMediaSubsessionIterator iter(*fOurServerMediaSession);
       ServerMediaSubsession* subsession;
+	  printf("RTSPServer::RTSPClientSession::handleCmd_SETUP,fNumStreamStates:%d\n", fNumStreamStates);
       for (unsigned i = 0; i < fNumStreamStates; ++i) {
 	subsession = iter.next();
 	fStreamStates[i].subsession = subsession;
@@ -1394,7 +1397,7 @@ void RTSPServer::RTSPClientSession
 #ifdef HACK_FOR_MULTIHOMED_SERVERS
     ReceivingInterfaceAddr = SendingInterfaceAddr = sourceAddr.sin_addr.s_addr;
 #endif
-    
+	printf("RTSPServer::RTSPClientSession::handleCmd_SETUP,getStreamParameters\n");
     subsession->getStreamParameters(fOurSessionId, ourClientConnection->fClientAddr.sin_addr.s_addr,
 				    clientRTPPort, clientRTCPPort,
 				    fStreamStates[trackNum].tcpSocketNum, rtpChannelId, rtcpChannelId,
